@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"net/http"
+	"gin-prototype/controllers"
 )
 
 func main() {
@@ -13,6 +15,3 @@ func main() {
 	router.GET("/",)
 }
 
-func root(c *gin.Context) {
-	
-}
