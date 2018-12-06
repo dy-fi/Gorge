@@ -9,28 +9,28 @@ import (
 	// routes
 	"gin-prototype/controllers/index"
 
-
+	
 )
 
 func main() {
 	fmt.Print("Starting...")
 
 	// init
-	router := gin.New()
+	r := gin.New()
 	// default middleware
-	router = gin.Default()
+	r = gin.Default()
 
 	// controllers
-	index.Init(router)
+	index.Init(r)
 
 
 	// catch all request to non-existing endpoints
-	router.NoRoute(func(c *gin.Context) {
+	r.NoRoute(func(c *gin.Context) {
 	c.JSON(400, gin.H{
 		"error": fmt.Sprintf("Bad Request - %s %s is not a valid endpoint!", c.Request.Method, c.Request.RequestURI),
 		})
 	})
 
-	router.Run(":")
+	r.Run()
 }
 

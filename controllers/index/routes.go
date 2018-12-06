@@ -12,9 +12,14 @@ func Init(e *gin.Engine) {
 
 	// routes
 	e.GET("/", c.root)
+	e.GET("/about", c.about)
 }
 
 // serve root
 func (*index) root (c *gin.Context) {
-	// server html
+	
+}
+
+func (*index) about (c *gin.Context) {
+	
 }
