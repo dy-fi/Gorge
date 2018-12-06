@@ -9,7 +9,8 @@ import (
 	// routes
 	"gin-prototype/controllers/index"
 
-	
+	// models 
+	"gin-prototype/entities"
 )
 
 func main() {
@@ -24,7 +25,7 @@ func main() {
 	index.Init(r)
 
 
-	// catch all request to non-existing endpoints
+	// catch all requests to non-existing endpoints
 	r.NoRoute(func(c *gin.Context) {
 	c.JSON(400, gin.H{
 		"error": fmt.Sprintf("Bad Request - %s %s is not a valid endpoint!", c.Request.Method, c.Request.RequestURI),
