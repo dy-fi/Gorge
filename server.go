@@ -10,7 +10,8 @@ import (
 	"gin-prototype/controllers/index"
 
 	// models 
-	"gin-prototype/entities"
+	"gin-prototype/entities/message"
+
 )
 
 func main() {
